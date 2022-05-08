@@ -80,7 +80,7 @@ def optimal(remlives,dictionary,remletters):
                 optletter = letter
         return([optprobability,optletter])
 
-# at https://stackoverflow.com/a/9950711/15613034 it is shown an example where maxfreq() is not optimal.
+# at https://stackoverflow.com/a/9950711/15613034 it is shown an example where maxfreq() is not optimal as an algorithm.
 # Let's test the optimal then!
 dictionary = ["abc","abd","aef","egh"]
 alphabet = ["a","b","c","d","e","f","g","h"]
