@@ -46,7 +46,7 @@ def cc(m):
         return(0)
 
 #returns a list with the most frequent letters in a dictionary for a given alphabet in descending order. The frequency is in %
-#maxfreq(["abacate"], ["a","b","c"]) = [['a', 100.0], ['b', 100.0], ['c', 100.0]]
+#maxfreq(["abc","abd"], ["a","b","c","d"]) = [['a', 100.0], ['b', 100.0], ['c', 50.0], ['d', 50.0]]
 #can be used for a simple heuristic strategy
 def maxfreq(dictionary,alphabet):
     frequency = []
