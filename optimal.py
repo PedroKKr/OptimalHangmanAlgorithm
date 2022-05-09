@@ -1,5 +1,6 @@
 # generates the mask of a word for a certain letter, which is a list containing
 # the indexes where a letter is contained in a word and the indexes where it is not contained
+#Example: mask("a","abacate") = [0,2,4]
 def genmask(letter,word):
     indexes = [[],[]]
     for i,a in enumerate(word):
@@ -11,7 +12,7 @@ def genmask(letter,word):
 
 #generates a list containing all masks for a dictionary and specified letter
 def allmask(letter,dictionary):
-    allmasks = [[[],[]]] #Should it contain the empty mask?
+    allmasks = []
     for word in dictionary:
         allmasks.append(genmask(letter,word))
     #Remove duplicates
@@ -45,7 +46,7 @@ def cc(m):
         return(0)
 
 #returns a list with the most frequent letters in a dictionary for a given alphabet in descending order. The frequency is in %
-#maxfreq(["abc","abd"], ["a","b","c","d"]) = [['a', 100.0], ['b', 100.0], ['c', 50.0], ['d', 50.0]]
+#maxfreq(["abacate"], ["a","b","c"]) = [['a', 100.0], ['b', 100.0], ['c', 100.0]]
 #can be used for a simple heuristic strategy
 def maxfreq(dictionary,alphabet):
     frequency = []
@@ -79,7 +80,8 @@ def optimal(remlives,dictionary,remletters):
                 optletter = letter
         return([optprobability,optletter])
 
-# at https://stackoverflow.com/a/9950711/15613034 it is shown an example where maxfreq() is not optimal as an algorithm.
+
+# at https://stackoverflow.com/a/9950711/15613034 it is shown an example where maxfreq() is not optimal.
 # Let's test the optimal then!
 dictionary = ["abc","abd","aef","egh"]
 alphabet = ["a","b","c","d","e","f","g","h"]
@@ -88,5 +90,8 @@ lives = 1
 print(maxfreq(dictionary,alphabet))
 print(optimal(lives,dictionary,alphabet))
 
+
 # maxfreq() returns 'a' because it is present in 75% of the words, but it has a lower overall winning probability
 # optimal() return [0.5, 'e'] which is exactly what is said in the URL above!
+
+
