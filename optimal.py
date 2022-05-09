@@ -1,6 +1,5 @@
 # generates the mask of a word for a certain letter, which is a list containing
 # the indexes where a letter is contained in a word and the indexes where it is not contained
-#Example: mask("a","abacate") = [0,2,4]
 def genmask(letter,word):
     indexes = [[],[]]
     for i,a in enumerate(word):
@@ -46,7 +45,6 @@ def cc(m):
         return(0)
 
 #returns a list with the most frequent letters in a dictionary for a given alphabet in descending order. The frequency is in %
-#maxfreq(["abacate"], ["a","b","c"]) = [['a', 100.0], ['b', 100.0], ['c', 100.0]]
 #can be used for a simple heuristic strategy
 def maxfreq(dictionary,alphabet):
     frequency = []
