@@ -1,6 +1,5 @@
 # generates the mask of a word for a certain letter, which is a list containing
 # the indexes where a letter is contained in a word and the indexes where it is not contained
-#Example: mask("a","abacate") = [0,2,4]
 def genmask(letter,word):
     indexes = [[],[]]
     for i,a in enumerate(word):
